@@ -2,7 +2,9 @@ import React from 'react';
 
 const MainContainer = () => {
   return (
-    <div className="MainContainer"></div>
+    <div className="MainContainer">
+      I am the main container.
+    </div>
   )
 }
 
