@@ -15,7 +15,7 @@ export const login = credentials => {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(credentials)
+      body: JSON.stringify(username: "Sarah1", password: "password")
     })
   }
 }
