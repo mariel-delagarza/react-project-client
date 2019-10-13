@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 
 import AnswerCard from './AnswerCard.js';
 
-const Answers = (props) => {
-  const answerCards = props.answers.map(a => <AnswerCard answer={a} key={a.id}/>)
+const MyAnswers = (props) => {
+  const answerCards = props.answers.map(a => <AnswerCard answer={a} />)
   return (
-    { answerCards }
+   answerCards.length  > 0 ? answerCards : null
   )
 }
 
@@ -22,4 +22,4 @@ const mapStateToProps = ({ answers }) => {
 
 //mapDispatchToProps says "This is the functionality I need"
 
-export default connect(mapStateToProps)(Answers)
+export default connect(mapStateToProps)(MyAnswers)

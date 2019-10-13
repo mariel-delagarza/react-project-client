@@ -1,5 +1,5 @@
 import { resetLoginForm } from './loginForm.js';
-import { getAnswers } from './answers.js';
+import { getMyAnswers } from './myAnswers.js';
 
 //synchronous action creators
 export const setCurrentUser = user => {
@@ -37,7 +37,7 @@ export const login = credentials => {
         alert(response.error)
       } else {
         dispatch(setCurrentUser(response.data))
-        dispatch(getAnswers())
+        dispatch(getMyAnswers())
         dispatch(resetLoginForm())
       }
     })
@@ -70,7 +70,7 @@ export const getCurrentUser = () => {
           alert(response.error)
         } else {
           dispatch(setCurrentUser(response.data))
-          dispatch(getAnswers())
+          dispatch(getMyAnswers())
         }
       })
       .catch(console.log)

@@ -1,14 +1,14 @@
 // synchronous actions
-export const setAnswers = answers => {
+export const setMyAnswers = answers => {
   return {
-    type: "SET_ANSWERS",
+    type: "SET_MY_ANSWERS",
     answers
   }
 }
 
 
 // asynchronous actions
-export const getAnswers = () => {
+export const getMyAnswers = () => {
   return dispatch => {
     return fetch("http://localhost:3001/api/v1/answers", {
       credentials: "include",
@@ -22,7 +22,7 @@ export const getAnswers = () => {
         if (response.error) {
           alert(response.error)
         } else {
-          dispatch(setAnswers(response.data))
+          dispatch(setMyAnswers(response.data))
         }
       })
       .catch(console.log)

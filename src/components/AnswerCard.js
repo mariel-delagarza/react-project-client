@@ -2,7 +2,7 @@ import React from 'react';
 
 const AnswerCard = ({answer}) => {
   return (
-    <p>{answer.question}</p>
+    <p>{answer.attributes.question}</p>
   )
 }
 

@@ -1,10 +1,10 @@
 import React from 'react';
-import Answers from './Answers.js';
+import MyAnswers from './MyAnswers.js';
 
 const MainContainer = () => {
   return (
     <div className="MainContainer">
-      <Answers />
+      <MyAnswers />
     </div>
   )
 }
