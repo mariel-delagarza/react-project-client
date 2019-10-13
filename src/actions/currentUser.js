@@ -35,7 +35,7 @@ export const login = credentials => {
   }
 }
 
-export const getCurrentUser = credentials => {
+export const getCurrentUser = () => {
   return dispatch => {
     return fetch("http://localhost:3001/api/v1/get_current_user", {
       credentials: "include",
