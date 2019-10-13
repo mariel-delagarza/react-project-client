@@ -8,7 +8,9 @@ import { updateLoginForm } from '../actions/loginForm.js';
 // and props.password.
 // Note updateLoginForm is *not* the same action creator imported
 // but is the "beefed up" redux version that can be used as a callback
-const Login = ({ username, password, updateLoginForm}) => {
+
+// update: props.loginForm is destructured as loginForm
+const Login = ({ loginForm, updateLoginForm}) => {
   
   // handleInputChange fires off the event,
   // grabbing the named value,
@@ -17,16 +19,20 @@ const Login = ({ username, password, updateLoginForm}) => {
   const handleInputChange = event => {
     const { name, value } = event.target
     const updatedFormInfo = {
-      name, 
-      value
+      ...loginForm,
+      [name]: value
     }
     updateLoginForm(updatedFormInfo)
   }
 
   return (
     <form onSubmit={undefined}>
-      <input placeholder="username" value={username} name="username" type="text" onChange={handleInputChange} />
-      <input placeholder="password" value={password} name="password" type="text" onChange={handleInputChange} />
+      {/*using loginForm means we need to go a level deep to get username/password
+        but this will allow making changes to the form by building an object and updating
+        username or password or both; spreading out loginForm keeps whichever other of 
+        those properties in place */}
+      <input placeholder="username" value={loginForm.username} name="username" type="text" onChange={handleInputChange} />
+      <input placeholder="password" value={loginForm.password} name="password" type="text" onChange={handleInputChange} />
       <input type="submit" value="Log In" />
     </form>
   )
@@ -42,10 +48,11 @@ const Login = ({ username, password, updateLoginForm}) => {
 //  password: "password"
 // }
 // Which means I can destructure it out as an argument
+
+// update later: grab the entire loginForm as an object, instead of individual pieces
 const mapStateToProps = state => {
   return {
-    username: state.loginForm.username,
-    password: state.loginForm.password
+    loginForm: state.loginForm
   }
 }
 
