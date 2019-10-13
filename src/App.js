@@ -1,7 +1,9 @@
+// imports from packages
 import React from 'react';
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 
+// imports from App files
 import { getCurrentUser } from './actions/currentUser.js';
 import NavBar from './components/NavBar.js';
 import Login from './components/Login.js';
