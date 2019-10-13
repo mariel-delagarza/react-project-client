@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { updateLoginForm } from '../actions/loginForm.js';
-
+import { login } from '../actions/currentUser.js';
 
 // Argument could also be "props"
 // and values could be props.username 
@@ -10,7 +10,7 @@ import { updateLoginForm } from '../actions/loginForm.js';
 // but is the "beefed up" redux version that can be used as a callback
 
 // update: props.loginForm is destructured as loginForm
-const Login = ({ loginForm, updateLoginForm}) => {
+const Login = ({ loginForm, updateLoginForm, login}) => {
   
   // handleInputChange fires off the event,
   // grabbing the named value,
@@ -26,7 +26,7 @@ const Login = ({ loginForm, updateLoginForm}) => {
   }
 
   return (
-    <form onSubmit={undefined}>
+    <form onSubmit={login}>
       {/*using loginForm means we need to go a level deep to get username/password
         but this will allow making changes to the form by building an object and updating
         username or password or both; spreading out loginForm keeps whichever other of 
@@ -63,4 +63,4 @@ const mapStateToProps = state => {
 // the value is whatever the value of this thing needs to be pointing to, usually an action creator, e.g. updateLoginForm
 // because this gives the syntax where the key and value are the same, you can use the simplified
 // syntax of just passing { updateLoginForm }
-export default connect(mapStateToProps, { updateLoginForm })(Login) 
+export default connect(mapStateToProps, { updateLoginForm, login })(Login) 
