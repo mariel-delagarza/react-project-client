@@ -1,3 +1,5 @@
+import { arrayExpression } from "@babel/types"
+
 //synchronous action creators
 export const setCurrentUser = user => {
   return {
@@ -9,6 +11,7 @@ export const setCurrentUser = user => {
 
 //asynchronous action creators
 export const login = credentials => {
+  console.log("crendetials are", credentials )
   return dispatch => {
     return fetch("http://localhost:3001/api/v1/login", {
       method: "POST",

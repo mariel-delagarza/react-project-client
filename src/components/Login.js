@@ -36,8 +36,8 @@ const Login = ({ loginForm, updateLoginForm, login}) => {
         but this will allow making changes to the form by building an object and updating
         username or password or both; spreading out loginForm keeps whichever other of 
         those properties in place */}
-      <input placeholder="username" value={loginForm.username} name="username" type="text" onChange={handleInputChange} />
-      <input placeholder="password" value={loginForm.password} name="password" type="text" onChange={handleInputChange} />
+      <input placeholder="username" value={loginFormData.username} name="username" type="text" onChange={handleInputChange} />
+      <input placeholder="password" value={loginFormData.password} name="password" type="text" onChange={handleInputChange} />
       <input type="submit" value="Log In" />
     </form>
   )
