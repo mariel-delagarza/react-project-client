@@ -18,7 +18,7 @@ export const clearCurrentUser = () => {
 
 
 //asynchronous action creators
-export const login = credentials => {
+export const login = (credentials, history) => {
   console.log("crendetials are", credentials )
   return dispatch => {
     //hit the api endpoint and sent information from form
@@ -40,6 +40,7 @@ export const login = credentials => {
         dispatch(setCurrentUser(response.data))
         dispatch(getMyAnswers())
         dispatch(resetLoginForm())
+        history.push('/')
       }
     })
     .catch(console.log)
