@@ -1,9 +1,10 @@
 import React from 'react';
+import Answers from './Answers.js';
 
 const MainContainer = () => {
   return (
     <div className="MainContainer">
-      I am the main container.
+      <Answers />
     </div>
   )
 }
