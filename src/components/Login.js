@@ -9,10 +9,24 @@ import { updateLoginForm } from '../actions/loginForm.js';
 // Note updateLoginForm is *not* the same action creator imported
 // but is the "beefed up" redux version that can be used as a callback
 const Login = ({ username, password, updateLoginForm}) => {
+  
+  // handleInputChange fires off the event,
+  // grabbing the named value,
+  // updating the object,
+  // and passing that object along
+  const handleInputChange = event => {
+    const { name, value } = event.target
+    const updatedFormInfo = {
+      name, 
+      value
+    }
+    updateLoginForm(updatedFormInfo)
+  }
+
   return (
     <form onSubmit={undefined}>
-      <input placeholder="username" value={username} name="username" type="text" onChange={event => updateLoginForm()} />
-      <input placeholder="password" value={password} name="password" type="text" onChange={event => updateLoginForm()} />
+      <input placeholder="username" value={username} name="username" type="text" onChange={handleInputChange} />
+      <input placeholder="password" value={password} name="password" type="text" onChange={handleInputChange} />
       <input type="submit" value="Log In" />
     </form>
   )
