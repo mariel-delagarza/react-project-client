@@ -10,6 +10,7 @@ import myAnswers from './components/MyAnswers.js';
 //import MainContainer from './components/MainContainer.js';
 import Signup from './components/Signup.js';
 import MyAnswers from './components/MyAnswers.js';
+import Home from './components/Home.js';
 
 class App extends React.Component {
 
