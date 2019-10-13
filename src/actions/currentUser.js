@@ -31,11 +31,11 @@ export const login = credentials => {
     //take the response from the api and make it json
     .then(r => r.json())
     //the user will be returned from the api
-    .then(user => {
-      if (user.error) {
-        alert(user.error)
+    .then(response => {
+      if (response.error) {
+        alert(response.error)
       } else {
-        dispatch(setCurrentUser(user))
+        dispatch(setCurrentUser(response.data))
       }
     })
     .catch(console.log)
