@@ -4,7 +4,7 @@ import { arrayExpression } from "@babel/types"
 export const setCurrentUser = user => {
   return {
     type: "SET_CURRENT_USER",
-    payload: user
+    user
   }
 }
 
@@ -22,16 +22,12 @@ export const login = credentials => {
       body: JSON.stringify(credentials)
     })
     //take the response from the api and make it json
-    .then(response => response.json())
+    .then(r => r.json())
     //the user will be returned from the api
     .then(user => {
       if (user.error) {
         alert(user.error)
       } else {
-        //do the set_current_user action
-        //with the payload of user
-        //instead of {type: "SET_CURRENT_USER", user: user}
-        //invoke the actionCreator
         dispatch(setCurrentUser(user))
       }
     })
