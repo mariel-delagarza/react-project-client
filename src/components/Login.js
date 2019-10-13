@@ -5,12 +5,14 @@ import { updateLoginForm } from '../actions/loginForm.js';
 
 // Argument could also be "props"
 // and values could be props.username 
-// and props.password
-const Login = ({ username, password}) => {
+// and props.password.
+// Note updateLoginForm is *not* the same action creator imported
+// but is the "beefed up" redux version that can be used as a callback
+const Login = ({ username, password, updateLoginForm}) => {
   return (
     <form onSubmit={undefined}>
-      <input placeholder="username" value={username} name="username" type="text" onChange={undefined} />
-      <input placeholder="password" value={password} name="password" type="text" onChange={undefined} />
+      <input placeholder="username" value={username} name="username" type="text" onChange={event => updateLoginForm()} />
+      <input placeholder="password" value={password} name="password" type="text" onChange={event => updateLoginForm()} />
       <input type="submit" value="Log In" />
     </form>
   )
@@ -34,5 +36,10 @@ const mapStateToProps = state => {
 }
 
 
-// importing {updateLoginForm} makes it available to pass to connect
-export default connect(mapStateToProps)(Login) 
+// importing {updateLoginForm} action creator makes it available to pass to connect
+// can import by building mapDispatchToProps function or can pass in object directly
+// key is whatever you want to call the object inside the component, e.g. updateLoginForm
+// the value is whatever the value of this thing needs to be pointing to, usually an action creator, e.g. updateLoginForm
+// because this gives the syntax where the key and value are the same, you can use the simplified
+// syntax of just passing { updateLoginForm }
+export default connect(mapStateToProps, { updateLoginForm })(Login) 
