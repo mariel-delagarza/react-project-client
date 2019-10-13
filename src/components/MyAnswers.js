@@ -4,9 +4,10 @@ import { connect } from 'react-redux';
 import AnswerCard from './AnswerCard.js';
 
 const MyAnswers = (props) => {
-  const answerCards = props.answers.map(a => <AnswerCard answer={a} />)
+  const answerCards = props.answers.length > 0 ? 
+    props.answers.map(a => <AnswerCard answer={a} key={a.id}/>) : null
   return (
-   answerCards.length  > 0 ? answerCards : null
+   answerCards
   )
 }
 
@@ -14,10 +15,10 @@ const MyAnswers = (props) => {
 // needs some info from the Redux store.
 // Not the parent, not anything else, just
 // *this* componenet.
-const mapStateToProps = ({ answers }) => {
-  return (
-    answers
-  )
+const mapStateToProps = state => {
+  return {
+    answers: state.myAnswers
+  }
 }
 
 //mapDispatchToProps says "This is the functionality I need"
