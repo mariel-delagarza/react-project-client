@@ -2,12 +2,14 @@ import { createStore, applyMiddleware, compose, combineReducers} from 'redux';
 import thunk from 'redux-thunk';
 import usersReducer from './reducers/users.js';
 import currentUser from './reducers/currentUser.js';
+import loginForm from './reducers/loginForm.js';
 
 //Basic Reducer for initial app creation
 //Lines 9-10 user 2 different syntax options
 const reducer = combineReducers({
   user: usersReducer,
-  currentUser
+  currentUser,
+  loginForm
 })
 
 //Install redux devtools
