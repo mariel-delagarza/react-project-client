@@ -24,7 +24,7 @@ class App extends React.Component {
     const { loggedIn } = this.props
     return (
       <div className="App">
-        <Logout />
+        {/*<Logout /> */}
         <NavBar />
         {/*<MainContainer />*/}
         <Route exact path='/' render={() => loggedIn ? <MyAnswers /> : <Home />} />
