@@ -31,14 +31,14 @@ const Login = ({ loginFormData, updateLoginForm, login}) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form class="ui form" onSubmit={handleSubmit}>
       {/*using loginForm means we need to go a level deep to get username/password
         but this will allow making changes to the form by building an object and updating
         username or password or both; spreading out loginForm keeps whichever other of 
         those properties in place */}
       <input placeholder="username" value={loginFormData.username} name="username" type="text" onChange={handleInputChange} />
       <input placeholder="password" value={loginFormData.password} name="password" type="text" onChange={handleInputChange} />
-      <input type="submit" value="Log In" />
+      <input class="ui button" type="submit" value="Log In" />
     </form>
   )
 }
