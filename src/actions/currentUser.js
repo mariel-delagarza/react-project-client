@@ -45,6 +45,34 @@ export const login = credentials => {
   }
 }
 
+export const signup = credentials => {
+  console.log("crendetials are", credentials )
+  return dispatch => {
+    //hit the api endpoint and sent information from form
+    return fetch("http://localhost:3001/api/v1/signup", {
+      credentials: "include",
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(credentials)
+    })
+    //take the response from the api and make it json
+    .then(r => r.json())
+    //the user will be returned from the api
+    .then(response => {
+      if (response.error) {
+        alert(response.error)
+      } else {
+        dispatch(setCurrentUser(response.data))
+        dispatch(getMyAnswers())
+        dispatch(resetLoginForm())
+      }
+    })
+    .catch(console.log)
+  }
+}
+
 export const logout = () => {
   return dispatch => {
     dispatch(clearCurrentUser())
