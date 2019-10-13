@@ -10,7 +10,7 @@ import { login } from '../actions/currentUser.js';
 // but is the "beefed up" redux version that can be used as a callback
 
 // update: props.loginForm is destructured as loginForm
-const Login = ({ loginForm, updateLoginForm, login}) => {
+const Login = ({ loginFormData, updateLoginForm, login}) => {
   
   // handleInputChange fires off the event,
   // grabbing the named value,
