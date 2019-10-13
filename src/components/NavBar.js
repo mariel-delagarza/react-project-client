@@ -9,7 +9,7 @@ const NavBar = ({ currentUser }) => {
   return (
     <div className="ui secondary pointing menu">
       {currentUser ? <p>Welcome, {currentUser.attributes.name}</p> : ""}
-      <div class="right menu">
+      <div className="right menu">
       {currentUser ? <Logout /> : <Login />}
       </div>
     </div>

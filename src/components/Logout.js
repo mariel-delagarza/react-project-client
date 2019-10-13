@@ -12,8 +12,8 @@ import { logout } from '../actions/currentUser.js';
 const Logout = ({ logout}) => {
   
   return (
-    <form class="ui form" onSubmit={logout}>
-      <input class="ui button" type="submit" value="Log Out" />
+    <form className="ui form" onSubmit={logout}>
+      <input className="ui button" type="submit" value="Log Out" />
     </form>
   )
 }
