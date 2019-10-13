@@ -25,8 +25,13 @@ const Login = ({ loginForm, updateLoginForm, login}) => {
     updateLoginForm(updatedFormInfo)
   }
 
+  const handleSubmit = event => {
+    event.preventDefault();
+    login(loginForm)
+  }
+
   return (
-    <form onSubmit={login}>
+    <form onSubmit={handleSubmit}>
       {/*using loginForm means we need to go a level deep to get username/password
         but this will allow making changes to the form by building an object and updating
         username or password or both; spreading out loginForm keeps whichever other of 
