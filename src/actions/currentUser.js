@@ -15,6 +15,7 @@ export const login = credentials => {
   return dispatch => {
     //hit the api endpoint and sent information from form
     return fetch("http://localhost:3001/api/v1/login", {
+      credentials: "include",
       method: "POST",
       headers: {
         "Content-Type": "application/json"
