@@ -30,9 +30,11 @@ export const login = credentials => {
       } else {
         //do the set_current_user action
         //with the payload of user
-        dispatch({type: "SET_CURRENT_USER", user: user})
+        //instead of {type: "SET_CURRENT_USER", user: user}
+        //invoke the actionCreator
+        dispatch(setCurrentUser(user))
       }
     })
-    .catch()
+    .catch(console.log)
   }
 }
