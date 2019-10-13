@@ -9,6 +9,7 @@ import Logout from './components/Logout.js';
 import myAnswers from './components/MyAnswers.js';
 //import MainContainer from './components/MainContainer.js';
 import Signup from './components/Signup.js';
+import MyAnswers from './components/MyAnswers.js';
 
 class App extends React.Component {
 
@@ -17,12 +18,13 @@ class App extends React.Component {
   }
 
   render() {
+    const { loggedIn } = this.props
     return (
       <div className="App">
         <Logout />
         <NavBar />
         {/*<MainContainer />*/}
-        <Route exact path='/' component={Home} />
+        <Route exact path='/' render={() => loggedIn ? <MyAnswers /> : <Home />} />
         <Route exact path='/signup' component={Signup} />
         <Route exact path='/login' component={Login} />
         {/*<Route exact path='/logout' component={Logout} /> */}
@@ -32,4 +34,10 @@ class App extends React.Component {
   }
 }
 
-export default connect(null, { getCurrentUser })(App);
+const mapStateToProps = state => {
+  return ({
+    loggedIn: !!state.currentUser
+  })
+}
+
+export default connect(mapStateToProps, { getCurrentUser })(App);
