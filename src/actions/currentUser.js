@@ -9,7 +9,7 @@ export const setCurrentUser = user => {
 
 //asynchronous action creators
 export const login = credentials => {
-  return {
-    
+  return dispatch => {
+    return fetch("http://localhost:3001/")
   }
 }
