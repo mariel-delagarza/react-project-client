@@ -14,6 +14,9 @@ class App extends React.Component {
   render() {
     return (
       this.props.currentUser ? <Logout /> : <Login />
+     // <Nav />
+      // <MainContainer /> 
+      // <Footer />
     );
   }
 }
