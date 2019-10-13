@@ -7,9 +7,11 @@ import Logout from './Logout.js';
 const NavBar = ({ currentUser }) => {
   
   return (
-    <div className="nav">
+    <div className="ui secondary pointing menu">
       {currentUser ? <p>Welcome, {currentUser.name}</p> : ""}
+      <div class="right menu">
       {currentUser ? <Logout /> : <Login />}
+      </div>
     </div>
   )
 }
