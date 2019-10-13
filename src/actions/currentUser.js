@@ -1,4 +1,5 @@
 import { resetLoginForm } from './loginForm.js';
+import { resetSignupForm } from './signupForm.js';
 import { getMyAnswers } from './myAnswers.js';
 
 //synchronous action creators
