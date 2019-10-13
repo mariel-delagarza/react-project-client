@@ -19,7 +19,7 @@ const Login = ({ loginForm, updateLoginForm, login}) => {
   const handleInputChange = event => {
     const { name, value } = event.target
     const updatedFormInfo = {
-      ...loginForm,
+      ...loginFormData,
       [name]: value
     }
     updateLoginForm(updatedFormInfo)
@@ -27,7 +27,7 @@ const Login = ({ loginForm, updateLoginForm, login}) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    login(loginForm)
+    login(loginFormData)
   }
 
   return (
@@ -57,7 +57,7 @@ const Login = ({ loginForm, updateLoginForm, login}) => {
 // update later: grab the entire loginForm as an object, instead of individual pieces
 const mapStateToProps = state => {
   return {
-    loginForm: state.loginForm
+    loginFormData: state.loginForm
   }
 }
 
