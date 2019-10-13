@@ -7,8 +7,7 @@ import Signup from './Signup.js';
 
 const Home = ({}) => (
   <div>
-    <h2>Welcome, please log in or sign up</h2>
-    
+    <h2>Welcome, please <Link to="/login">log in</Link> or <Link to="/signup">sign up</Link>.</h2>
   </div>
   
 );
