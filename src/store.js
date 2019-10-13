@@ -3,13 +3,15 @@ import thunk from 'redux-thunk';
 import usersReducer from './reducers/users.js';
 import currentUser from './reducers/currentUser.js';
 import loginForm from './reducers/loginForm.js';
+import answers from './reducers/answers.js';
 
 //Basic Reducer for initial app creation
 //Lines 9-10 user 2 different syntax options
 const reducer = combineReducers({
   user: usersReducer,
   currentUser,
-  loginForm
+  loginForm,
+  answers
 })
 
 //Install redux devtools
