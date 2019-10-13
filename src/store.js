@@ -1,4 +1,5 @@
 import { createStore, applyMiddleware, compose, combineReducers} from 'redux';
+import thunk from 'redux-thunk';
 import usersReducer from './reducers/users.js';
 
 //Basic Reducer for initial app creation

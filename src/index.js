@@ -1,12 +1,11 @@
 //Import from packages
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { thunk } from 'redux-thunk';
 import { Provider } from 'react-redux';
-import store from './store.js';
 
 //Import from app files
 import App from './App';
+import store from './store.js';
 
 //Update DOM
 ReactDOM.render(
