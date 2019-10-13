@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { updateLoginForm } from '../actions/loginForm.js';
+
 
 // Argument could also be "props"
 // and values could be props.username 
@@ -31,4 +33,6 @@ const mapStateToProps = state => {
   }
 }
 
+
+// importing {updateLoginForm} makes it available to pass to connect
 export default connect(mapStateToProps)(Login) 
