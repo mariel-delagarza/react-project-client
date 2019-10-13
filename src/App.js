@@ -7,7 +7,7 @@ import { Route } from 'react-router-dom';
 import { getCurrentUser } from './actions/currentUser.js';
 import NavBar from './components/NavBar.js';
 import Login from './components/Login.js';
-//import Logout from './components/Logout.js';
+import Logout from './components/Logout.js';
 import myAnswers from './components/MyAnswers.js';
 //import MainContainer from './components/MainContainer.js';
 import Signup from './components/Signup.js';
@@ -24,9 +24,9 @@ class App extends React.Component {
     const { loggedIn } = this.props
     return (
       <div className="App">
-        {/*<Logout /> */}
         <NavBar />
         {/*<MainContainer />*/}
+        { loggedIn ? <Logout /> : null }
         <Route exact path='/' render={() => loggedIn ? <MyAnswers /> : <Home />} />
         <Route exact path='/signup' component={Signup} />
         <Route exact path='/login' component={Login} />
