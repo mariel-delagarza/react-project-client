@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { logout } from '../actions/currentUser.js';
 
 // Argument could also be "props"
@@ -9,13 +10,16 @@ import { logout } from '../actions/currentUser.js';
 // but is the "beefed up" redux version that can be used as a callback
 
 // update: props.loginForm is destructured as loginForm
-const Logout = ({ logout}) => {
+const Logout = ({ logout, history }) => {
   
   return (
-    <form className="ui form" onSubmit={logout}>
+    <form className="ui form" onSubmit={(event) => {
+      logout()
+      history.push('/')}
+    }>
       <input className="ui button" type="submit" value="Log Out" />
     </form>
   )
 }
 
-export default connect(null, { logout })(Logout) 
+export default withRouter(connect(null, { logout })(Logout))
