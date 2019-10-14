@@ -1,6 +1,6 @@
 import { resetLoginForm } from './loginForm.js';
 import { resetSignupForm } from './signupForm.js';
-import { getMyAnswers } from './myAnswers.js';
+import { getMyAnswers, clearAnswers } from './myAnswers.js';
 
 //synchronous action creators
 export const setCurrentUser = user => {

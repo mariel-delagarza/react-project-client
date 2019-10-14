@@ -25,7 +25,7 @@ class App extends React.Component {
     const { loggedIn } = this.props
     return (
       <div className="App">
-        <NavBar />
+        { loggedIn? <NavBar /> : null }
         {/*<MainContainer />*/}
         {/*{ loggedIn ? <Logout /> : null } */}
         <Switch>
