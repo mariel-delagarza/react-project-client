@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Login from './Login';
-import Logout from './Logout.js';
-import Signup from './Signup.js';
+//import Login from './Login';
+//import Logout from './Logout.js';
+//import Signup from './Signup.js';
 
 const Home = ({}) => (
   <div>
