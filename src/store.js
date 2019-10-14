@@ -7,8 +7,6 @@ import myAnswers from './reducers/myAnswers.js';
 import signupForm from './reducers/signupForm.js';
 import newAnswerForm from './reducers/newAnswerForm.js';
 
-//Basic Reducer for initial app creation
-//Lines 9-10 user 2 different syntax options
 const reducer = combineReducers({
   user: usersReducer,
   currentUser,
