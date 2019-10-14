@@ -14,6 +14,7 @@ import Signup from './components/Signup.js';
 import MyAnswers from './components/MyAnswers.js';
 import Home from './components/Home.js';
 import NewAnswerForm from './components/NewAnswerForm.js';
+import AnswerCard from './components/AnswerCard.js';
 import './App.css';
 
 class App extends React.Component {
