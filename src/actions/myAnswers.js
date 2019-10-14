@@ -60,7 +60,13 @@ export const createAnswer = answerData => {
       body: JSON.stringify(sendableAnswerData)
     })
       .then(r => r.json)
-      .then(console.log)
+      .then(resp => {
+        if (resp.error) {
+          alert(resp.error)
+        } else {
+          dispatch(addAnswer(resp.data))
+        }
+      })
       .catch(console.log)
   }
 }

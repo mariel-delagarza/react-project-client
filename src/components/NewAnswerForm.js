@@ -17,10 +17,7 @@ const NewAnswerForm = ({ formData, updateNewAnswerForm, createAnswer, user_id })
   const handleSubmit = event => {
     event.preventDefault()
     //debugger
-    createAnswer({
-      ...formData,
-      user_id
-    })
+    createAnswer({...formData, user_id })
   }
 
   // This is what the form data looks like:
