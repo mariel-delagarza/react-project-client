@@ -36,6 +36,7 @@ class App extends React.Component {
           {/*<Route exact path='/logout' component={Logout} /> */}
           <Route exact path='/answers' component={myAnswers} />
           <Route exact path='/answers/new' component={NewAnswerForm} />
+          <Route exact path='/answers/:id' component={AnswerCard} />
         </Switch>
       </div>
     );
