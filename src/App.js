@@ -1,7 +1,7 @@
 // imports from packages
 import React from 'react';
 import { connect } from 'react-redux';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 
 // imports from App files
 import { getCurrentUser } from './actions/currentUser.js';
@@ -14,6 +14,7 @@ import Signup from './components/Signup.js';
 import MyAnswers from './components/MyAnswers.js';
 import Home from './components/Home.js';
 import NewAnswerForm from './components/NewAnswerForm.js';
+import './App.css';
 
 class App extends React.Component {
 
@@ -25,7 +26,7 @@ class App extends React.Component {
     const { loggedIn } = this.props
     return (
       <div className="App">
-        { loggedIn? <NavBar /> : null }
+        { loggedIn? <NavBar location={this.props.location} /> : null }
         {/*<MainContainer />*/}
         {/*{ loggedIn ? <Logout /> : null } */}
         <Switch>
@@ -47,4 +48,4 @@ const mapStateToProps = state => {
   })
 }
 
-export default connect(mapStateToProps, { getCurrentUser })(App);
+export default withRouter(connect(mapStateToProps, { getCurrentUser })(App));
