@@ -1,8 +1,12 @@
 import React from 'react';
 
+
 const NewAnswerForm = () => {
 
-  const handleInputChange=()=>{}
+  const handleInputChange = (event) => {
+    const { name, value } = event.target
+    updateNewAnswerForm(name, value)
+  }
 
   return(
     <form>
