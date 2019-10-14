@@ -11,7 +11,7 @@ export default (state=initialState, action) => {
     case "UPDATE_NEW_ANSWER_FORM":
       return {
         ...state, 
-        [action.form.data.name]: action.formData.value
+        [action.formData.name]: action.formData.value
       }
     case "RESET_NEW_ANSWER_FORM":
       return initialState
