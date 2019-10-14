@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { updateNewAnswerForm } from '../actions/newAnswerForm.js';
 
 const NewAnswerForm = () => {
 
@@ -9,11 +9,11 @@ const NewAnswerForm = () => {
   }
 
   return(
-    <form>
-      <input value={"question"} name="question" type="text" onChange={handleInputChange} />
-      <input value={"topic"} name="topic" type="text" onChange={handleInputChange} />
-      <input value={"source link"} name="source_link" type="text" onChange={handleInputChange} />
-      <input value={"answer"} name="answer" type="text" onChange={handleInputChange} />
+    <form className="ui form">
+      <input placeholder={"question"} value={""} name="question" type="text" onChange={handleInputChange} />
+      <input placeholder={"topic"} value={""} name="topic" type="text" onChange={handleInputChange} />
+      <input placeholder={"source link"} value={""} name="source_link" type="text" onChange={handleInputChange} />
+      <input placeholder={"answer"} value={""} name="answer" type="text" onChange={handleInputChange} />
 
       <input className="ui button" type="submit" value="Create" />
     </form>
