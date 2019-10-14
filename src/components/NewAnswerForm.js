@@ -2,8 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { updateNewAnswerForm } from '../actions/newAnswerForm.js';
+import { createAnswer } from '../actions/myAnswers.js';
 
-const NewAnswerForm = ({ formData, history, updateNewAnswerForm }) => {
+const NewAnswerForm = ({ formData, history, updateNewAnswerForm, createAnswer }) => {
 
   
 
@@ -15,7 +16,16 @@ const NewAnswerForm = ({ formData, history, updateNewAnswerForm }) => {
 
   const handleSubmit = event => {
     event.preventDefault()
+    createAnswer(formData)
   }
+
+  // This is what the form data looks like:
+  // formData: {
+  //   question: ""
+  //   topic: ""
+  //   source_link: ""
+  //   answer: ""
+  // }
 
   const { question, topic, source_link, answer } = formData
 
@@ -37,7 +47,7 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { updateNewAnswerForm })(NewAnswerForm)
+export default connect(mapStateToProps, { updateNewAnswerForm, createAnswer })(NewAnswerForm)
 
 /*
 Below are what is available for creating an Answer:

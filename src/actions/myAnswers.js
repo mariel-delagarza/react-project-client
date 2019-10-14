@@ -40,3 +40,18 @@ export const getMyAnswers = () => {
       .catch(console.log)
   }
 }
+
+export const createAnswer = answerData => {
+  return dispatch => {
+    return fetch("http://localhost:3001/answers", {
+      credentials: "include",
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: answerData
+    })
+      .then(r => r.json)
+      .then(console.log)
+  }
+}
