@@ -13,6 +13,7 @@ import myAnswers from './components/MyAnswers.js';
 import Signup from './components/Signup.js';
 import MyAnswers from './components/MyAnswers.js';
 import Home from './components/Home.js';
+import NewAnswerForm from './components/NewAnswerForm.js';
 
 class App extends React.Component {
 
