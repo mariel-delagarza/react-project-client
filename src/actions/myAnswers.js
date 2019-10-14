@@ -8,7 +8,7 @@ export const setMyAnswers = answers => {
 
 export const clearAnswers = () => {
   return {
-    type: "CLEAR_TRIPS"
+    type: "CLEAR_ANSWERS"
   }
 }
 
