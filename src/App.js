@@ -31,7 +31,7 @@ class App extends React.Component {
         <Route exact path='/signup' component={Signup} />
         <Route exact path='/login' component={Login} />
         {/*<Route exact path='/logout' component={Logout} /> */}
-        <Route exact path='/my-answers' component={myAnswers} />
+        <Route exact path='/answers' component={myAnswers} />
       </div>
     );
   }
