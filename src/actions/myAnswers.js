@@ -49,7 +49,7 @@ export const createAnswer = answerData => {
       headers: {
         "Content-Type": "application/json"
       },
-      body: answerData
+      body: JSON.stringify(answerData)
     })
       .then(r => r.json)
       .then(console.log)
