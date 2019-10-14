@@ -8,7 +8,7 @@ const MyAnswers = (props) => {
   //debugger
   const answerCards = props.answers.length > 0 ? 
     props.answers.map(a => (<><Link key={a.id} to={`/answers/${a.id}`} >{a.attributes.question}</Link><br/></>)) : 
-                            <p>FAIL</p>
+                            <p>Your answers will go here. Create an answer at New Answers in the Navigation Bar.</p>
   return (
    answerCards
   )
