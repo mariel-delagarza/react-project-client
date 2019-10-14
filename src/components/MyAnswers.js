@@ -1,11 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import AnswerCard from './AnswerCard.js';
+//import AnswerCard from './AnswerCard.js';
 
 const MyAnswers = (props) => {
+  //debugger
   const answerCards = props.answers.length > 0 ? 
-    props.answers.map(a => <AnswerCard answer={a} key={a.id}/>) : null
+    props.answers.map(a => (<><Link key={a.id} to={`/answers/${a.id}`} >{a.attributes.question}</Link><br/></>)) : 
+                            <p>FAIL</p>
   return (
    answerCards
   )
