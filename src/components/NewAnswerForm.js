@@ -1,15 +1,20 @@
 import React from 'react';
 
 const NewAnswerForm = () => {
-  <form>
-    <input placeholder="question" value={newAnswerFormData.question} name="question" type="text" onChange={handleInputChange} />
-    <input placeholder="topic" value={newAnswerFormData.topic} name="topic" type="text" onChange={handleInputChange} />
-    <input placeholder="source link" value={newAnswerFormData.source_link} name="source_link" type="text" onChange={handleInputChange} />
-    <input placeholder="answer" value={newAnswerFormData.answer} name="answer" type="text" onChange={handleInputChange} />
 
-    <input className="ui button" type="submit" value="Create" />
-  </form>
-};
+  const handleInputChange=()=>{}
+
+  return(
+    <form>
+      <input placeholder="question" value={question} name="question" type="text" onChange={handleInputChange} />
+      <input placeholder="topic" value={topic} name="topic" type="text" onChange={handleInputChange} />
+      <input placeholder="source link" value={source_link} name="source_link" type="text" onChange={handleInputChange} />
+      <input placeholder="answer" value={answer} name="answer" type="text" onChange={handleInputChange} />
+
+      <input className="ui button" type="submit" value="Create" />
+    </form>
+  );
+}
 
 export default NewAnswerForm
 
