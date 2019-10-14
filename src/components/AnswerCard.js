@@ -1,5 +1,5 @@
 import React from 'react';
-//import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const AnswerCard = ({answer}) => {
   return (
@@ -10,7 +10,7 @@ const AnswerCard = ({answer}) => {
       <p>{answer.attributes.topic}</p>
       <p>{answer.attributes.source_link}</p>
       <p>{answer.attributes.answer_param}</p>
-      {/*<Link to={`/answers/${answer.id}/edit`}>Edit this Answer</Link>*/}
+      <Link to={`/answers/${answer.id}/edit`}>Edit this Answer</Link>
     </div> :
     null
     

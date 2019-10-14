@@ -45,7 +45,7 @@ const NewAnswerForm = ({ formData, history, updateNewAnswerForm, createAnswer, u
 const mapStateToProps = (state) => {
   const user_id = state.currentUser ? state.currentUser.id : "" 
   return {
-    formData: state.NewAnswerForm,
+    formData: state.newAnswerForm,
     user_id
   }
 }

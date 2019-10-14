@@ -41,11 +41,6 @@ class App extends React.Component {
             //console.log(answer)
             return <AnswerCard answer={answer} {...props} />
           }}/>
-          {/*<Route exact path='/answers/:id/edit' render={props => {
-            const answer = myAnswers.find(answer => answer.id === props.match.params.id )
-            //console.log(answer)
-            return <EditAnswerFormWrapper answer={answer} {...props} />
-          }}/>*/}
         </Switch>
       </div>
     );
