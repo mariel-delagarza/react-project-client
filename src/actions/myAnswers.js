@@ -1,3 +1,5 @@
+import { resetNewAnswerForm } from './newAnswerForm.js';
+
 // synchronous actions
 export const setMyAnswers = answers => {
   return {
@@ -59,12 +61,14 @@ export const createAnswer = (answerData, history) => {
       },
       body: JSON.stringify(sendableAnswerData)
     })
-      .then(r => r.json)
+      .then(r => r.json())
       .then(resp => {
         if (resp.error) {
           alert(resp.error)
         } else {
           dispatch(addAnswer(resp.data))
+          //debugger
+          dispatch(resetNewAnswerForm())
           history.push(`/answers/${resp.data.id}`)
         }
       })
