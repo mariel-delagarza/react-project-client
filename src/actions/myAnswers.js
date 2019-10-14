@@ -1,4 +1,4 @@
-import { resetAnswerForm } from './AnswerForm.js';
+import { resetNewAnswerForm } from './newAnswerForm.js';
 
 // synchronous actions
 export const setMyAnswers = answers => {

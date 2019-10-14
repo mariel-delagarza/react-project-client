@@ -5,7 +5,7 @@ import currentUser from './reducers/currentUser.js';
 import loginForm from './reducers/loginForm.js';
 import myAnswers from './reducers/myAnswers.js';
 import signupForm from './reducers/signupForm.js';
-import AnswerForm from './reducers/AnswerForm.js';
+import newAnswerForm from './reducers/NewAnswerForm.js';
 
 const reducer = combineReducers({
   //user: usersReducer,
@@ -13,7 +13,7 @@ const reducer = combineReducers({
   loginForm,
   myAnswers,
   signupForm,
-  AnswerForm
+  newAnswerForm
 })
 
 //Install redux devtools
