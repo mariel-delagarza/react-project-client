@@ -13,10 +13,10 @@ const NewAnswerForm = () => {
 
   return(
     <form className="ui form">
-      <input placeholder={"question"} name="question" type="text" onChange={handleInputChange} />
-      <input placeholder={"topic"} name="topic" type="text" onChange={handleInputChange} />
-      <input placeholder={"source link"} name="source_link" type="text" onChange={handleInputChange} />
-      <input placeholder={"answer"} name="answer" type="text" onChange={handleInputChange} />
+      <input placeholder={"question"} name="question" type="text" onChange={handleInputChange} value={name} />
+      <input placeholder={"topic"} name="topic" type="text" onChange={handleInputChange} value={name} />
+      <input placeholder={"source link"} name="source_link" type="text" onChange={handleInputChange} value={name} />
+      <input placeholder={"answer"} name="answer" type="text" onChange={handleInputChange} value={name} />
 
       <input className="ui button" type="submit" value="Create" />
     </form>
