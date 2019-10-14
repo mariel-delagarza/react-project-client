@@ -1,17 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { updateNewAnswerForm } from '../actions/newAnswerForm.js';
+import { updateAnswerForm } from '../actions/AnswerForm.js';
 import { createAnswer } from '../actions/myAnswers.js';
 
-const NewAnswerForm = ({ formData, history, updateNewAnswerForm, createAnswer, user_id }) => {
+const AnswerForm = ({ formData, history, updateAnswerForm, createAnswer, user_id }) => {
 
   
 
   const handleInputChange = (event) => {
     //event.preventDefault()
     const { name, value } = event.target
-    updateNewAnswerForm(name, value)
+    updateAnswerForm(name, value)
   }
 
   const handleSubmit = event => {
@@ -45,12 +45,12 @@ const NewAnswerForm = ({ formData, history, updateNewAnswerForm, createAnswer, u
 const mapStateToProps = (state) => {
   const user_id = state.currentUser ? state.currentUser.id : "" 
   return {
-    formData: state.newAnswerForm,
+    formData: state.AnswerForm,
     user_id
   }
 }
 
-export default connect(mapStateToProps, { updateNewAnswerForm, createAnswer })(NewAnswerForm)
+export default connect(mapStateToProps, { updateAnswerForm, createAnswer })(AnswerForm)
 
 /*
 Below are what is available for creating an Answer:

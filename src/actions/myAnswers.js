@@ -1,4 +1,4 @@
-import { resetNewAnswerForm } from './newAnswerForm.js';
+import { resetAnswerForm } from './AnswerForm.js';
 
 // synchronous actions
 export const setMyAnswers = answers => {
@@ -68,7 +68,7 @@ export const createAnswer = (answerData, history) => {
         } else {
           dispatch(addAnswer(resp.data))
           //debugger
-          dispatch(resetNewAnswerForm())
+          dispatch(resetAnswerForm())
           history.push(`/answers/${resp.data.id}`)
         }
       })
