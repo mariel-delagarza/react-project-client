@@ -1,7 +1,7 @@
 // imports from packages
 import React from 'react';
 import { connect } from 'react-redux';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 // imports from App files
 import { getCurrentUser } from './actions/currentUser.js';
@@ -28,12 +28,14 @@ class App extends React.Component {
         <NavBar />
         {/*<MainContainer />*/}
         { loggedIn ? <Logout /> : null }
-        <Route exact path='/' render={() => loggedIn ? <MyAnswers /> : <Home />} />
-        <Route exact path='/signup' component={Signup} />
-        <Route exact path='/login' component={Login} />
-        {/*<Route exact path='/logout' component={Logout} /> */}
-        <Route exact path='/answers' component={myAnswers} />
-        <Route exact path='/answers/new' component={NewAnswerForm} />
+        <Switch>
+          <Route exact path='/' render={() => loggedIn ? <MyAnswers /> : <Home />} />
+          <Route exact path='/signup' component={Signup} />
+          <Route exact path='/login' component={Login} />
+          {/*<Route exact path='/logout' component={Logout} /> */}
+          <Route exact path='/answers' component={myAnswers} />
+          <Route exact path='/answers/new' component={NewAnswerForm} />
+        </Switch>
       </div>
     );
   }
