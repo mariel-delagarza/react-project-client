@@ -43,7 +43,7 @@ export const getMyAnswers = () => {
 
 export const createAnswer = answerData => {
   return dispatch => {
-    return fetch("http://localhost:3001/answers", {
+    return fetch("http://localhost:3001/api/v1/answers", {
       credentials: "include",
       method: "POST",
       headers: {
