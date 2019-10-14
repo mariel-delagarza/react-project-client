@@ -8,7 +8,6 @@ import { getCurrentUser } from './actions/currentUser.js';
 import NavBar from './components/NavBar.js';
 import Login from './components/Login.js';
 //import Logout from './components/Logout.js';
-import myAnswers from './components/MyAnswers.js';
 //import MainContainer from './components/MainContainer.js';
 import Signup from './components/Signup.js';
 import MyAnswers from './components/MyAnswers.js';
@@ -24,7 +23,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { loggedIn } = this.props
+    const { loggedIn, myAnswers } = this.props
     return (
       <div className="App">
         { loggedIn? <NavBar location={this.props.location} /> : null }
@@ -35,9 +34,13 @@ class App extends React.Component {
           <Route exact path='/signup' component={Signup} />
           <Route exact path='/login' component={Login} />
           {/*<Route exact path='/logout' component={Logout} /> */}
-          <Route exact path='/answers' component={myAnswers} />
+          <Route exact path='/answers' component={MyAnswers} />
           <Route exact path='/answers/new' component={NewAnswerForm} />
-          <Route exact path='/answers/:id' component={AnswerCard} />
+          <Route exact path='/answers/:id' render={props => {
+            const answer = myAnswers.find(answer => answer.id === props.match.params.id )
+            //console.log(answer)
+            return <AnswerCard answer={answer} {...props} />
+          }}/>
         </Switch>
       </div>
     );
@@ -46,7 +49,8 @@ class App extends React.Component {
 
 const mapStateToProps = state => {
   return ({
-    loggedIn: !!state.currentUser
+    loggedIn: !!state.currentUser,
+    myAnswers: state.myAnswers
   })
 }
 
