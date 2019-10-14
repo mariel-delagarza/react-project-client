@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { updateNewAnswerForm } from '../actions/newAnswerForm.js';
 
-const NewAnswerForm = ({ question, topic, source_link, answer, history }) => {
+const NewAnswerForm = ({ question, topic, source_link, answer, history, updateNewAnswerForm }) => {
 
   const handleInputChange = (event) => {
     //event.preventDefault()
