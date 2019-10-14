@@ -41,7 +41,7 @@ export const getMyAnswers = () => {
   }
 }
 
-export const createAnswer = answerData => {
+export const createAnswer = (answerData, history) => {
   return dispatch => {
     const sendableAnswerData = {
       question: answerData.question,
@@ -65,6 +65,7 @@ export const createAnswer = answerData => {
           alert(resp.error)
         } else {
           dispatch(addAnswer(resp.data))
+          history.push(`/answers/${resp.data.id}`)
         }
       })
       .catch(console.log)

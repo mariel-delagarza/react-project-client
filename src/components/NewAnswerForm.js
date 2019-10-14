@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { updateNewAnswerForm } from '../actions/newAnswerForm.js';
 import { createAnswer } from '../actions/myAnswers.js';
 
-const NewAnswerForm = ({ formData, updateNewAnswerForm, createAnswer, user_id }) => {
+const NewAnswerForm = ({ formData, history, updateNewAnswerForm, createAnswer, user_id }) => {
 
   
 
@@ -17,7 +17,7 @@ const NewAnswerForm = ({ formData, updateNewAnswerForm, createAnswer, user_id })
   const handleSubmit = event => {
     event.preventDefault()
     //debugger
-    createAnswer({...formData, user_id })
+    createAnswer({...formData, user_id}, history )
   }
 
   // This is what the form data looks like:
