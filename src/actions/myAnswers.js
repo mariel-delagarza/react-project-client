@@ -12,6 +12,13 @@ export const clearAnswers = () => {
   }
 }
 
+export const addAnswer = answer => {
+  return {
+    type: "ADD_ANSWER",
+    answer
+  }
+}
+
 // asynchronous actions
 export const getMyAnswers = () => {
   return dispatch => {
