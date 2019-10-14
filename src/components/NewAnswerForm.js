@@ -6,13 +6,15 @@ import { updateNewAnswerForm } from '../actions/newAnswerForm.js';
 const NewAnswerForm = ({ question, topic, source_link, answer, history }) => {
 
   const handleInputChange = (event) => {
-    event.preventDefault()
+    //event.preventDefault()
     const { name, value } = event.target
     updateNewAnswerForm(name, value)
   }
 
+  const handleSubmit = event => event.preventDefault()
+
   return(
-    <form className="ui form">
+    <form onSubmit={handleSubmit} className="ui form">
       <input placeholder={"question"} name="question" type="text" onChange={handleInputChange} value={question} />
       <input placeholder={"topic"} name="topic" type="text" onChange={handleInputChange} value={topic} />
       <input placeholder={"source link"} name="source_link" type="text" onChange={handleInputChange} value={source_link} />
