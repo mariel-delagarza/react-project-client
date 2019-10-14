@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 import { updateNewAnswerForm } from '../actions/newAnswerForm.js';
 
 const NewAnswerForm = () => {
@@ -21,7 +23,17 @@ const NewAnswerForm = () => {
   );
 }
 
-export default NewAnswerForm
+const mapStateToProps = (state) => {
+  const { question, topic, source_link, answer } = state.newAnswerForm
+  return {
+    question,
+    topic,
+    source_link,
+    answer
+  }
+}
+
+export default connect(mapStateToProps, { updateNewAnswerForm })(NewAnswerForm)
 
 /*
 Below are what is available for creating an Answer:
