@@ -14,6 +14,7 @@ const Logout = ({ logout, history }) => {
   
   return (
     <form className="ui form" onSubmit={(event) => {
+      event.preventDefault()
       logout()
       history.push('/')}
     }>
