@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { updateNewAnswerForm } from '../actions/newAnswerForm.js';
 import { createAnswer } from '../actions/myAnswers.js';
 
-const NewAnswerForm = ({ formData, history, updateNewAnswerForm, createAnswer, user_id }) => {
+const NewAnswerForm = ({ formData, updateNewAnswerForm, createAnswer, user_id }) => {
 
   
 
@@ -16,6 +16,7 @@ const NewAnswerForm = ({ formData, history, updateNewAnswerForm, createAnswer, u
 
   const handleSubmit = event => {
     event.preventDefault()
+    //debugger
     createAnswer({
       ...formData,
       user_id
@@ -30,14 +31,14 @@ const NewAnswerForm = ({ formData, history, updateNewAnswerForm, createAnswer, u
   //   answer: ""
   // }
 
-  const { question, topic, source_link, answer } = formData
+  const { question, topic, source_link, answer_param } = formData
 
   return(
     <form onSubmit={handleSubmit} className="ui form">
       <input placeholder={"question"} name="question" type="text" onChange={handleInputChange} value={question} />
       <input placeholder={"topic"} name="topic" type="text" onChange={handleInputChange} value={topic} />
       <input placeholder={"source link"} name="source_link" type="text" onChange={handleInputChange} value={source_link} />
-      <input placeholder={"answer"} name="answer" type="text" onChange={handleInputChange} value={answer} />
+      <input placeholder={"answer"} name="answer_param" type="text" onChange={handleInputChange} value={answer_param} />
 
       <input className="ui button" type="submit" value="Create" />
     </form>

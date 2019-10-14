@@ -47,7 +47,7 @@ export const createAnswer = answerData => {
       question: answerData.question,
       topic: answerData.topic,
       source_link: answerData.source_link,
-      answer: answerData.answer,
+      answer_param: answerData.answer_param,
       user_id: answerData.user_id
     }
 
