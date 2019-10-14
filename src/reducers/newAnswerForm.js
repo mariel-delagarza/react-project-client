@@ -2,7 +2,7 @@ const initialState ={
   question: "",
   topic: "",
   source_link: "",
-  answer: ""
+  answer_param: ""
 }
 
 

@@ -43,13 +43,21 @@ export const getMyAnswers = () => {
 
 export const createAnswer = answerData => {
   return dispatch => {
+    const sendableAnswerData = {
+      question: answerData.question,
+      topic: answerData.topic,
+      source_link: answerData.source_link,
+      answer: answerData.answer,
+      user_id: answerData.user_id
+    }
+
     return fetch("http://localhost:3001/api/v1/answers", {
       credentials: "include",
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(answerData)
+      body: JSON.stringify(sendableAnswerData)
     })
       .then(r => r.json)
       .then(console.log)

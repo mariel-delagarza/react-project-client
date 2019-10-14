@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { updateNewAnswerForm } from '../actions/newAnswerForm.js';
 import { createAnswer } from '../actions/myAnswers.js';
 
-const NewAnswerForm = ({ formData, history, updateNewAnswerForm, createAnswer }) => {
+const NewAnswerForm = ({ formData, history, updateNewAnswerForm, createAnswer, user_id }) => {
 
   
 
@@ -16,7 +16,10 @@ const NewAnswerForm = ({ formData, history, updateNewAnswerForm, createAnswer })
 
   const handleSubmit = event => {
     event.preventDefault()
-    createAnswer(formData)
+    createAnswer({
+      ...formData,
+      user_id
+    })
   }
 
   // This is what the form data looks like:
@@ -42,8 +45,10 @@ const NewAnswerForm = ({ formData, history, updateNewAnswerForm, createAnswer })
 }
 
 const mapStateToProps = (state) => {
+  const user_id = state.currentUser ? state.currentUser.id : "" 
   return {
-    formData: state.newAnswerForm
+    formData: state.newAnswerForm,
+    user_id
   }
 }
 
