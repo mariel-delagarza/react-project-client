@@ -4,6 +4,7 @@ import { updateNewAnswerForm } from '../actions/newAnswerForm.js';
 const NewAnswerForm = () => {
 
   const handleInputChange = (event) => {
+    event.preventDefault()
     const { name, value } = event.target
     updateNewAnswerForm(name, value)
   }
