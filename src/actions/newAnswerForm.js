@@ -1,5 +1,5 @@
 // synchronous actions
-export const updateAnswerForm = (name, value) => {
+export const updateNewAnswerForm = (name, value) => {
   const formData = { name, value }
   return {
     type: "UPDATE_NEW_ANSWER_FORM",
@@ -7,7 +7,7 @@ export const updateAnswerForm = (name, value) => {
   }
 }
 
-export const resetAnswerForm = () => {
+export const resetNewAnswerForm = () => {
   return {
     type: "RESET_NEW_ANSWER_FORM"
   }

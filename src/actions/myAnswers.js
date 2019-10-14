@@ -68,7 +68,7 @@ export const createAnswer = (answerData, history) => {
         } else {
           dispatch(addAnswer(resp.data))
           //debugger
-          dispatch(resetAnswerForm())
+          dispatch(resetNewAnswerForm())
           history.push(`/answers/${resp.data.id}`)
         }
       })

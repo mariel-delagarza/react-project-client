@@ -5,7 +5,7 @@ import currentUser from './reducers/currentUser.js';
 import loginForm from './reducers/loginForm.js';
 import myAnswers from './reducers/myAnswers.js';
 import signupForm from './reducers/signupForm.js';
-import newAnswerForm from './reducers/NewAnswerForm.js';
+import newAnswerForm from './reducers/newAnswerForm.js';
 
 const reducer = combineReducers({
   //user: usersReducer,

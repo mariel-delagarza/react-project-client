@@ -12,7 +12,7 @@ import Login from './components/Login.js';
 import Signup from './components/Signup.js';
 import MyAnswers from './components/MyAnswers.js';
 import Home from './components/Home.js';
-import AnswerForm from './components/AnswerForm.js/index.js';
+import NewAnswerForm from './components/NewAnswerForm.js';
 import AnswerCard from './components/AnswerCard.js';
 import './App.css';
 
@@ -35,7 +35,7 @@ class App extends React.Component {
           <Route exact path='/login' component={Login} />
           {/*<Route exact path='/logout' component={Logout} /> */}
           <Route exact path='/answers' component={MyAnswers} />
-          <Route exact path='/answers/new' component={AnswerForm} />
+          <Route exact path='/answers/new' component={NewAnswerForm} />
           <Route exact path='/answers/:id' render={props => {
             const answer = myAnswers.find(answer => answer.id === props.match.params.id )
             //console.log(answer)
