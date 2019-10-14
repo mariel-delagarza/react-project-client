@@ -6,3 +6,9 @@ export const updateNewAnswerForm = (name, value) => {
     formData
   }
 }
+
+export const resetNewAnswerForm = () => {
+  return {
+    type: "RESET_NEW_ANSWER_FORM"
+  }
+}
