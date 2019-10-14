@@ -3,7 +3,9 @@ import { connect } from 'react-redux';
 
 import { updateNewAnswerForm } from '../actions/newAnswerForm.js';
 
-const NewAnswerForm = ({ question, topic, source_link, answer, history, updateNewAnswerForm }) => {
+const NewAnswerForm = ({ formData, history, updateNewAnswerForm }) => {
+
+  
 
   const handleInputChange = (event) => {
     //event.preventDefault()
@@ -11,7 +13,11 @@ const NewAnswerForm = ({ question, topic, source_link, answer, history, updateNe
     updateNewAnswerForm(name, value)
   }
 
-  const handleSubmit = event => event.preventDefault()
+  const handleSubmit = event => {
+    event.preventDefault()
+  }
+
+  const { question, topic, source_link, answer } = formData
 
   return(
     <form onSubmit={handleSubmit} className="ui form">
@@ -26,12 +32,8 @@ const NewAnswerForm = ({ question, topic, source_link, answer, history, updateNe
 }
 
 const mapStateToProps = (state) => {
-  const { question, topic, source_link, answer } = state.newAnswerForm
   return {
-    question,
-    topic,
-    source_link,
-    answer
+    formData: state.newAnswerForm
   }
 }
 
