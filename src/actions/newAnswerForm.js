@@ -8,6 +8,7 @@ export const updateNewAnswerForm = (name, value) => {
 }
 
 export const resetNewAnswerForm = () => {
+  console.log('9')
   return {
     type: "RESET_NEW_ANSWER_FORM"
   }

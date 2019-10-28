@@ -15,6 +15,7 @@ export const clearAnswers = () => {
 }
 
 export const addAnswer = answer => {
+  console.log('6')
   return {
     type: "ADD_ANSWER",
     answer
@@ -44,6 +45,7 @@ export const getMyAnswers = () => {
 }
 
 export const createAnswer = (answerData, history) => {
+  console.log('2')
   return dispatch => {
     const sendableAnswerData = {
       question: answerData.question,
@@ -63,15 +65,19 @@ export const createAnswer = (answerData, history) => {
     })
       .then(r => r.json())
       .then(resp => {
+        console.log('4')
         if (resp.error) {
           alert(resp.error)
         } else {
+          console.log('5')
           dispatch(addAnswer(resp.data))
           //debugger
+          console.log('7')
           dispatch(resetNewAnswerForm())
           history.push(`/answers/${resp.data.id}`)
         }
       })
       .catch(console.log)
+      console.log('3')
   }
 }

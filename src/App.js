@@ -8,7 +8,7 @@ import { getCurrentUser } from './actions/currentUser.js';
 import NavBar from './components/NavBar.js';
 import Login from './components/Login.js';
 //import Logout from './components/Logout.js';
-//import MainContainer from './components/MainContainer.js';
+import MainContainer from './components/MainContainer.js';
 import Signup from './components/Signup.js';
 import MyAnswers from './components/MyAnswers.js';
 import Home from './components/Home.js';
@@ -30,11 +30,11 @@ class App extends React.Component {
         {/*<MainContainer />*/}
         {/*{ loggedIn ? <Logout /> : null } */}
         <Switch>
-          <Route exact path='/' render={() => loggedIn ? <MyAnswers /> : <Home />} />
+          <Route exact path='/' render={() => loggedIn ? <MainContainer /> : <Home />} />
           <Route exact path='/signup' component={Signup} />
           <Route exact path='/login' component={Login} />
           {/*<Route exact path='/logout' component={Logout} /> */}
-          <Route exact path='/answers' component={MyAnswers} />
+          <Route exact path='/answers' component={MainContainer} />
           <Route exact path='/answers/new' component={NewAnswerForm} />
           <Route exact path='/answers/:id' render={props => {
             const answer = myAnswers.find(answer => answer.id === props.match.params.id )

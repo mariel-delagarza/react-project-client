@@ -15,6 +15,7 @@ const NewAnswerForm = ({ formData, history, updateNewAnswerForm, createAnswer, u
   }
 
   const handleSubmit = event => {
+    console.log('1')
     event.preventDefault()
     //debugger
     createAnswer({...formData, user_id}, history )

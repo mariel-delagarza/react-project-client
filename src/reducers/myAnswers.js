@@ -1,4 +1,5 @@
 export default (state = [], action) => {
+  console.log('8')
   switch (action.type) {
     case "SET_MY_ANSWERS":
       return action.answers 
